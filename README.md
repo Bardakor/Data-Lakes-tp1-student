@@ -33,7 +33,7 @@ Move the contents of the dataset (train, dev, test, random_split) to a data/bron
 ### Unpack the Data
 Unpack the data using the unpack_data.py script found in the build folder.
 ```bash
-python build/unpack_data.py --input_dir data/bronze/ --output_file data/bronze/combined_data.csv
+python build/unpack_data.py --input_dir data/bronze/dev --output_file data/bronze/combined_data.csv
 ```
 
 ## 2. Data Analysis
@@ -43,6 +43,6 @@ A quick data analysis is at your disposal to help you understand the data in the
 Data needs to be preprocessed to be stage from a bronze to a silver layer. Your preprocessing script should drop rows with missing values if they exist, encode labels, split data across train/dev/test sets, drop columns and save class weights for training.
 
 ```bash
-python src/preprocess.py --data_file data/bronze/combined_data.csv --output_dir data/silver/
+python src/preprocess.py --data_file data/bronze/combined_data.csv --output_dir data/silver
 ```
 
